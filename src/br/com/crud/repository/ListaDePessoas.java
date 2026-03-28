@@ -19,8 +19,8 @@ public class ListaDePessoas {
     }
 
     //Metodo para adicionar as pessoas cadastradas a lista
-    public void listar(Pessoa criarPessoa){
-        pessoas.add(criarPessoa);
+    public void adicionar(Pessoa pessoa) {
+        pessoas.add(pessoa);
     }
     
 
