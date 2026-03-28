@@ -14,6 +14,10 @@ public class ListaDePessoas {
             )
     );
 
+    public List<Pessoa> listar(){
+        return new ArrayList<>(pessoas);
+    }
+
     //Metodo para adicionar as pessoas cadastradas a lista
     public void listar(Pessoa criarPessoa){
         pessoas.add(criarPessoa);
