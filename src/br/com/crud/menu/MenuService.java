@@ -32,7 +32,8 @@ public class MenuService {
                     listaDePessoas.exibirPessoas();
                     break;
                 case "3": // U *Update
-
+                    atualizarDados.atualizarDados();
+                    break;
             }
 
         }while (true);
