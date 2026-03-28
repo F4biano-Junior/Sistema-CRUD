@@ -22,6 +22,7 @@ public class CriarPessoa {
         System.out.println("Idade do Pessoa: ");
         int idade = input.nextInt();
         input.nextLine();
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
         System.out.println("Cidade do Pessoa: ");
         String cidade = input.nextLine();
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
