@@ -29,7 +29,7 @@ public class MenuService {
                     criarPessoa.cadastrar();
                     break;
                 case "2": // R *Read
-                    listaDePessoas.exibirPessoas();
+                    listaDePessoas.exibir();
                     break;
                 case "3": // U *Update
                     atualizarDados.atualizarDados();
