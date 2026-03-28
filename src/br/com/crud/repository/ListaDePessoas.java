@@ -1,4 +1,4 @@
-package br.com.crud.lista;
+package br.com.crud.repository;
 
 import br.com.crud.cliente.Pessoa;
 
