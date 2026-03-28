@@ -11,15 +11,15 @@ public class MenuService {
         ListaDePessoas listaDePessoas = new ListaDePessoas();
 
         Scanner teclado = new Scanner(System.in);
-
-        System.out.println(
-                """
-                1 - C Criar Pessoa
-                2 - R Listar Pessoas
-                3 - U Atualizar dados
-                4 - D Deletar Pessoa
-                """
-        );
+        do {
+            System.out.println(
+                    """
+                    1 - C Criar Pessoa
+                    2 - R Listar Pessoas
+                    3 - U Atualizar dados
+                    4 - D Deletar Pessoa
+                    """
+            );
 
             System.out.println("Qual ação tomar");
             String opcao = teclado.next();
