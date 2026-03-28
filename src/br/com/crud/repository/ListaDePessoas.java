@@ -22,6 +22,4 @@ public class ListaDePessoas {
     public void adicionar(Pessoa pessoa) {
         pessoas.add(pessoa);
     }
-    
-
 }
