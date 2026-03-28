@@ -7,7 +7,12 @@ import br.com.crud.menu.MenuService;
 import java.util.Scanner;
 
 public class CriarPessoa {
-    public void cadastrar() {
+   /*
+    * aqui eu chamo a lista do repository em vez de criar uma nova
+    * é uma injeção de dependencia
+    * mantem os dados no repository
+    */
+    public void cadastrar(ListaDePessoas p) {
         Scanner input = new Scanner(System.in);
         ListaDePessoas listaDePessoas = new ListaDePessoas();
 
