@@ -21,9 +21,9 @@ public class MenuService {
                 """
         );
 
-        System.out.println("Qual ação tomar");
-        String opcao = teclado.next();
-        do {
+            System.out.println("Qual ação tomar");
+            String opcao = teclado.next();
+
             switch (opcao) {
                 case "1": // C *Create
                     criarPessoa.cadastrar();
