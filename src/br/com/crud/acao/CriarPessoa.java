@@ -18,6 +18,7 @@ public class CriarPessoa {
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
         System.out.println("Nome do Pessoa: ");
         String nome = input.nextLine();
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
         System.out.println("Idade do Pessoa: ");
         int idade = input.nextInt();
         input.nextLine();
