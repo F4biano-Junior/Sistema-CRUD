@@ -30,6 +30,7 @@ public class CriarPessoa {
 
         p.adicionar(pessoaCriada);
 
+        System.out.println("Pessoa cadastrada com sucesso!");
 
         MenuService menu = new MenuService();
         menu.menuService();
