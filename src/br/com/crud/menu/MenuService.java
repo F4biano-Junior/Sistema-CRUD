@@ -13,7 +13,7 @@ public class MenuService {
         AtualizarDados atualizarDados = new AtualizarDados();
 
         Scanner teclado = new Scanner(System.in);
-        do {
+        while (true) {
             System.out.println(
                     """
                     1 - C Criar Pessoa
