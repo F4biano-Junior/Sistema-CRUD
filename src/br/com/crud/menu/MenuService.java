@@ -31,8 +31,11 @@ public class MenuService {
                     criarPessoa.cadastrar();
                     break;
                 case "2": // R *Read
-                    for (Pessoa p : listaDePessoas.listar()){
-                        System.out.println(p);
+                    // criar uma copia da lista do repositorio
+                    List<Pessoa> pessoas = listaDePessoas.listar();
+                    // lê essa copia
+                    for (Pessoa pessoa : pessoas){
+                        System.out.println(pessoa);
                     }
                     break;
                 case "3": // U *Update
