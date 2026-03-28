@@ -9,6 +9,7 @@ public class MenuService {
     public void menuService() {
         CriarPessoa criarPessoa = new CriarPessoa();
         ListaDePessoas listaDePessoas = new ListaDePessoas();
+        AtualizarDados atualizarDados = new AtualizarDados();
 
         Scanner teclado = new Scanner(System.in);
         do {
