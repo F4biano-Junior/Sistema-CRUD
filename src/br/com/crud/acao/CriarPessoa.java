@@ -28,7 +28,7 @@ public class CriarPessoa {
 
         Pessoa pessoaCriada = new Pessoa(nome, idade, cidade);
 
-        listaDePessoas.listar(pessoaCriada);
+        p.adicionar(pessoaCriada);
 
 
         MenuService menu = new MenuService();
