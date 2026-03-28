@@ -14,7 +14,6 @@ public class CriarPessoa {
     */
     public void cadastrar(ListaDePessoas p) {
         Scanner input = new Scanner(System.in);
-        ListaDePessoas listaDePessoas = new ListaDePessoas();
 
         System.out.println("Nome do Pessoa: ");
         String nome = input.nextLine();
