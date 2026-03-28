@@ -31,7 +31,9 @@ public class MenuService {
                     criarPessoa.cadastrar();
                     break;
                 case "2": // R *Read
-                    listaDePessoas.exibirPessoas();
+                    for (Pessoa p : listaDePessoas.listar()){
+                        System.out.println(p);
+                    }
                     break;
                 case "3": // U *Update
                     atualizarDados.atualizarDados();
