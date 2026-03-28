@@ -18,11 +18,6 @@ public class ListaDePessoas {
     public void listar(Pessoa criarPessoa){
         pessoas.add(criarPessoa);
     }
-
-    //Metodo para exibir a lista de pessoas cadastradas
-    public void exibirPessoas(){
-        pessoas.forEach(System.out::println);
-    }
-
+    
 
 }
