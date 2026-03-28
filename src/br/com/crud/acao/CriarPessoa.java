@@ -32,9 +32,5 @@ public class CriarPessoa {
 
         System.out.println("Pessoa cadastrada com sucesso!");
 
-        MenuService menu = new MenuService();
-        menu.menuService();
-
-        input.close();
     }
 }
