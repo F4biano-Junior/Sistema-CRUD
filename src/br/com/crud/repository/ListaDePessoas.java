@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaDePessoas {
-    List<Pessoa> pessoas = new ArrayList<>(
+    private List<Pessoa> pessoas = new ArrayList<>(
             List.of(
                     new Pessoa("Sara", 35, "Santa Catarina"),
                     new Pessoa("Leon", 45, "São Paulo"),
