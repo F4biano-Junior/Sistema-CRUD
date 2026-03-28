@@ -1,0 +1,28 @@
+package br.com.crud.lista;
+
+import br.com.crud.cliente.Pessoa;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaDePessoas {
+    List<Pessoa> pessoas = new ArrayList<>(
+            List.of(
+                    new Pessoa("Sara", 35, "Santa Catarina"),
+                    new Pessoa("Leon", 45, "São Paulo"),
+                    new Pessoa("Jonny Silverhand", 38, "Night City")
+            )
+    );
+
+    //Metodo para adicionar as pessoas cadastradas a lista
+    public void listar(Pessoa criarPessoa){
+        pessoas.add(criarPessoa);
+    }
+
+    //Metodo para exibir a lista de pessoas cadastradas
+    public void exibirPessoas(){
+        pessoas.forEach(System.out::println);
+    }
+
+
+}

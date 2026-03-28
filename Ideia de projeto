@@ -1,0 +1,21 @@
+1. Sistema de Cadastro (CRUD básico)
+Ideia:
+
+Um sistema no terminal para cadastrar:
+
+Nome
+Idade
+Cidade
+
+Funcionalidades:
+Criar pessoa
+Listar pessoas
+Atualizar dados
+Deletar pessoa
+
+O que você aprende:
+
+Classes e objetos
+List (ArrayList)
+Menu com Scanner
+Organização de código
