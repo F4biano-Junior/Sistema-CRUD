@@ -24,7 +24,7 @@ public class CriarPessoa {
         input.nextLine();
         System.out.println("Cidade do Pessoa: ");
         String cidade = input.nextLine();
-
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
 
         Pessoa pessoaCriada = new Pessoa(nome, idade, cidade);
 
