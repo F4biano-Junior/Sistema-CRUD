@@ -6,12 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AtualizarDados {
-    public void atualizarDados(){
-        List<ListaDePessoas> listaDePessoas = new ArrayList<>();
-        System.out.println(listaDePessoas);
-
-        for(ListaDePessoas p : listaDePessoas){
-            System.out.println(p);
+    public void atualizarDados(ListaDePessoas pessoas){
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Atualizando dados de pessoas");
