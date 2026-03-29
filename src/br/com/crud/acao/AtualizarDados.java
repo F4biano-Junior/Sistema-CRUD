@@ -2,8 +2,7 @@ package br.com.crud.acao;
 
 import br.com.crud.lista.ListaDePessoas;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class AtualizarDados {
     public void atualizarDados(ListaDePessoas pessoas){
