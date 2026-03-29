@@ -1,6 +1,7 @@
 package br.com.crud.acao;
 
-import br.com.crud.lista.ListaDePessoas;
+import br.com.crud.cliente.Pessoa;
+import br.com.crud.repository.ListaDePessoas;
 
 import java.util.Scanner;
 
