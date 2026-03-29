@@ -4,6 +4,7 @@ import br.com.crud.acao.AtualizarDados;
 import br.com.crud.acao.CriarPessoa;
 import br.com.crud.lista.ListaDePessoas;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuService {
