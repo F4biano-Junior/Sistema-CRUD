@@ -39,7 +39,7 @@ public class MenuService {
                     }
                     break;
                 case "3": // U *Update
-                    atualizarDados.atualizarDados();
+                    atualizarDados.atualizarDados(listaDePessoas);
                     break;
             }
 
