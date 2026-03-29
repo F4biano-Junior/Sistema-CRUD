@@ -28,7 +28,7 @@ public class MenuService {
 
             switch (opcao) {
                 case "1": // C *Create
-                    criarPessoa.cadastrar();
+                    criarPessoa.cadastrar(listaDePessoas);
                     break;
                 case "2": // R *Read
                     // criar uma copia da lista do repositorio
