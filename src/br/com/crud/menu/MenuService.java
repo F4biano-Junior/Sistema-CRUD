@@ -2,7 +2,8 @@ package br.com.crud.menu;
 
 import br.com.crud.acao.AtualizarDados;
 import br.com.crud.acao.CriarPessoa;
-import br.com.crud.lista.ListaDePessoas;
+import br.com.crud.cliente.Pessoa;
+import br.com.crud.repository.ListaDePessoas;
 
 import java.util.List;
 import java.util.Scanner;
