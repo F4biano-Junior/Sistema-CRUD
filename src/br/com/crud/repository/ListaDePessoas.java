@@ -22,4 +22,14 @@ public class ListaDePessoas {
     public void adicionar(Pessoa pessoa) {
         pessoas.add(pessoa);
     }
+
+    @Override
+    public String toString() {
+        for (Pessoa pessoa : pessoas) {
+            System.out.println(pessoa);
+        }
+        return "";
+    }
+
+
 }
