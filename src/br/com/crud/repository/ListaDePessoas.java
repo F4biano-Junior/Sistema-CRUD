@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaDePessoas {
-    private List<Pessoa> pessoas = new ArrayList<>(
-            List.of(
-                    new Pessoa("Sara", 35, "Santa Catarina"),
-                    new Pessoa("Leon", 45, "São Paulo"),
-                    new Pessoa("Jonny Silverhand", 38, "Night City")
-            )
-    );
+    private int contadorId = 1;
+    private List<Pessoa> pessoas = new ArrayList<>();
+
+    public PessoaRepository() {
+        adicionar(new Pessoa("Sara", 35, "Santa Catarina"));
+        adicionar(new Pessoa("Leon", 45, "São Paulo"));
+        adicionar(new Pessoa("Jonny Silverhand", 38, "Night City"));
+    }
 
     public List<Pessoa> listar(){
         return new ArrayList<>(pessoas);
