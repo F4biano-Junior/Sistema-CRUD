@@ -7,30 +7,37 @@ import java.util.List;
 
 public class ListaDePessoas {
     private int contadorId = 1;
-    private List<Pessoa> pessoas = new ArrayList<>();
+    private List<Pessoa> pessoaArrayList = new ArrayList<>();
 
-    public PessoaRepository() {
-        adicionar(new Pessoa("Sara", 35, "Santa Catarina"));
-        adicionar(new Pessoa("Leon", 45, "São Paulo"));
-        adicionar(new Pessoa("Jonny Silverhand", 38, "Night City"));
-    }
-
-    public List<Pessoa> listar(){
-        return new ArrayList<>(pessoas);
+    public List<Pessoa> listar() {
+        return new ArrayList<>(pessoaArrayList);
     }
 
     //Metodo para adicionar as pessoas cadastradas a lista
     public void adicionar(Pessoa pessoa) {
-        pessoas.add(pessoa);
+        pessoa.setId(contadorId++);
+        pessoaArrayList.add(pessoa);
     }
 
     @Override
     public String toString() {
-        for (Pessoa pessoa : pessoas) {
+        for (Pessoa pessoa : pessoaArrayList) {
             System.out.println(pessoa);
         }
         return "";
     }
 
-
+    public ListaDePessoas() {
+        adicionar(new Pessoa("Lucy", 18, "Lua"));
+        adicionar(new Pessoa("David Martinez", 18, "Night City"));
+        adicionar(new Pessoa("Jonny Silverhand", 155, "Night City"));
+    }
+  public Pessoa buscarPorId(int id){
+        for(Pessoa p : pessoaArrayList){
+            if (p.getId() == id){
+                return p;
+            }
+        }
+        return null;
+  }
 }
