@@ -32,12 +32,20 @@ public class ListaDePessoas {
         adicionar(new Pessoa("David Martinez", 18, "Night City"));
         adicionar(new Pessoa("Jonny Silverhand", 155, "Night City"));
     }
-  public Pessoa buscarPorId(int id){
+    public Pessoa buscarPorId(int id){
         for(Pessoa p : pessoaArrayList){
             if (p.getId() == id){
                 return p;
             }
         }
         return null;
-  }
+    }
+    public Pessoa deletarPorId(int id){
+        for(Pessoa p : pessoaArrayList){
+            if (p.getId() == id){
+                pessoaArrayList.remove(p);
+            }
+        }
+        return null;
+    }
 }

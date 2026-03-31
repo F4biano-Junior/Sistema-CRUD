@@ -32,6 +32,7 @@ public class Pessoa {
     public String getNome() {
         return nome;
     }
+
     public void atualizarNome (String novoNome) {
         this.nome = novoNome;
     }

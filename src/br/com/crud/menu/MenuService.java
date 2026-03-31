@@ -2,6 +2,7 @@ package br.com.crud.menu;
 
 import br.com.crud.acao.AtualizarDados;
 import br.com.crud.acao.CriarPessoa;
+import br.com.crud.acao.DeletarPessoa;
 import br.com.crud.cliente.Pessoa;
 import br.com.crud.repository.ListaDePessoas;
 
@@ -13,6 +14,7 @@ public class MenuService {
         CriarPessoa criarPessoa = new CriarPessoa();
         ListaDePessoas listaDePessoas = new ListaDePessoas();
         AtualizarDados atualizarDados = new AtualizarDados();
+        DeletarPessoa deletarPessoa = new DeletarPessoa();
 
         Scanner teclado = new Scanner(System.in);
         while (true) {
@@ -43,6 +45,9 @@ public class MenuService {
                 case "3": // U *Update
                     atualizarDados.atualizarDados(listaDePessoas);
                     break;
+                case "4":
+                    deletarPessoa.deletar(listaDePessoas);
+
             }
 
         }

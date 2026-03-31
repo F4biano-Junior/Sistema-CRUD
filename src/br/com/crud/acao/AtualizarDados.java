@@ -6,20 +6,20 @@ import br.com.crud.repository.ListaDePessoas;
 import java.util.Scanner;
 
 public class AtualizarDados {
-    public void atualizarDados(ListaDePessoas pessoas){
+    public void atualizarDados(ListaDePessoas atualizarPessoa){
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Atualizando dados de pessoas");
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        System.out.println(pessoas);
+        System.out.println(atualizarPessoa);
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Digite o ID de quem vai atualizar os dados:");
         int inputId = sc.nextInt();
         sc.nextLine();
 
-        Pessoa pessoaAtualizar = pessoas.buscarPorId(inputId);
+        Pessoa atualizarPorId = atualizarPessoa.buscarPorId(inputId);
 
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Qual dado vai atualizar");
@@ -36,18 +36,18 @@ public class AtualizarDados {
             case 1:
                 System.out.println("Qual será o novo nome?");
                 String novoNome = sc.nextLine();
-                pessoaAtualizar.atualizarNome(novoNome);
+                atualizarPorId.atualizarNome(novoNome);
                 break;
             case 2:
                 System.out.println("Qual será a nova idade?");
                 int novaIdade = sc.nextInt();
                 sc.nextLine();
-                pessoaAtualizar.atualizarIdade(novaIdade);
+                atualizarPorId.atualizarIdade(novaIdade);
                 break;
             case 3:
                 System.out.println("Qual será a nova cidade?");
                 String novaCidade = sc.nextLine();
-                pessoaAtualizar.atualizarCidade(novaCidade);
+                atualizarPorId.atualizarCidade(novaCidade);
                 break;
         }
     }
