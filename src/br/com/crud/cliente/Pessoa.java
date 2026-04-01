@@ -6,7 +6,14 @@ public class Pessoa {
     private String cidade;
     private int id;
 
-    public Pessoa( String nome, int idade, String cidade) {
+    public Pessoa( String nome, int idade, String cidade){
+        if (nome == null || nome.trim().isEmpty()){
+            throw new IllegalArgumentException("O campo nome deve ser declarado! ");
+        } if ( idade < 0 || idade > 120){
+            throw new IllegalArgumentException("Digite uma idade válida!");
+        }if (cidade == null || cidade.trim().isEmpty()){
+            throw new IllegalArgumentException();
+        }
         this.nome = nome;
         this.idade = idade;
         this.cidade = cidade;
@@ -29,9 +36,6 @@ public class Pessoa {
         return id;
     }
 
-    public String getNome() {
-        return nome;
-    }
 
     public void atualizarNome (String novoNome) {
         this.nome = novoNome;
@@ -39,8 +43,6 @@ public class Pessoa {
     public  void atualizarIdade (int novaIdade){
         this.idade = novaIdade;
     }
-    public void atualizarCidade (String novaCidade){
-        this.cidade = novaCidade;
-    }
+    public void atualizarCidade (String novaCidade){this.cidade = novaCidade; }
 
 }

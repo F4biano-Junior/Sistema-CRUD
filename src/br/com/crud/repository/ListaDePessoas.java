@@ -28,10 +28,18 @@ public class ListaDePessoas {
     }
 
     public ListaDePessoas() {
-        adicionar(new Pessoa("Lucy", 18, "Lua"));
+        try {
+            adicionar(new Pessoa("Lucy", 18, "Lua"));
+
         adicionar(new Pessoa("David Martinez", 18, "Night City"));
-        adicionar(new Pessoa("Jonny Silverhand", 155, "Night City"));
+        adicionar(new Pessoa("Jonny Silverhand", 55, "Night City"));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+
+        }
     }
+
+
     public Pessoa buscarPorId(int id){
         for(Pessoa p : pessoaArrayList){
             if (p.getId() == id){
@@ -40,6 +48,8 @@ public class ListaDePessoas {
         }
         return null;
     }
+
+
     public Pessoa deletarPorId(int id){
         for(Pessoa p : pessoaArrayList){
             if (p.getId() == id){

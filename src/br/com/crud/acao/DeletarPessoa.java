@@ -11,7 +11,7 @@ public class DeletarPessoa {
         System.out.println("Quem vai deletar? " +
                 "Digite o ID");
         int pDeletar = input.nextInt();
-
+        /* Declarando variavel pessoa * Pessoa da classe deletar * metodo deletar por id(VariaveldoID) */
         Pessoa delete = pessoaDeletar.deletarPorId(pDeletar);
 
         System.out.println(delete);
