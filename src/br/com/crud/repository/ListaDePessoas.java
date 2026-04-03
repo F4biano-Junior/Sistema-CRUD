@@ -2,6 +2,7 @@ package br.com.crud.repository;
 
 import br.com.crud.cliente.Pessoa;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,15 +29,9 @@ public class ListaDePessoas {
     }
 
     public ListaDePessoas() {
-        try {
-            adicionar(new Pessoa("Lucy", 18, "Lua"));
-
-        adicionar(new Pessoa("David Martinez", 18, "Night City"));
-        adicionar(new Pessoa("Jonny Silverhand", 55, "Night City"));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-
-        }
+            adicionar(new Pessoa("Lucy", LocalDate.of(2005, 10, 3), "Lua"));
+            adicionar(new Pessoa("David ",LocalDate.of(2005,8, 11), "São Paulo"));
+            adicionar(new Pessoa("João", LocalDate.of(2005, 11, 3),"Rio De Janeiro"));
     }
 
 

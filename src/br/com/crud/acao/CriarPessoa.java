@@ -1,8 +1,12 @@
 package br.com.crud.acao;
 
 import br.com.crud.cliente.Pessoa;
+import br.com.crud.exception.ValidarDataDeNascimento;
 import br.com.crud.repository.ListaDePessoas;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,6 +19,7 @@ public class CriarPessoa {
     public void cadastrar(ListaDePessoas p) {
         boolean criar = false;
         Scanner input = new Scanner(System.in);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         while (!criar) {
             try {
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
@@ -24,8 +29,10 @@ public class CriarPessoa {
 
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
 
-                System.out.println("Idade do Pessoa: ");
-                int idade = Integer.parseInt(input.nextLine());
+                System.out.println("Data de Nascimento: ");
+                LocalDate data = LocalDate.parse(input.next(), formato);
+
+                input.nextLine();
 
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
 
@@ -34,22 +41,15 @@ public class CriarPessoa {
 
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
 
-                Pessoa pessoaCriada = new Pessoa(nome, idade, cidade);
+                Pessoa pessoaCriada = new Pessoa(nome, data, cidade);
 
                 p.adicionar(pessoaCriada);
 
                 criar = true;
                 System.out.println("Pessoa cadastrada com sucesso!");
-            } catch (InputMismatchException e) {
-                System.out.println("Erro: " + e.getMessage());
-                input.next();
-            } catch (NumberFormatException e) {
-                System.out.println("Erro Inesperando: " + e.getMessage());
-            } catch (IllegalArgumentException e) {
+            } catch (ValidarDataDeNascimento e) {
                 System.out.println(e.getMessage());
             }
-
         }
-
     }
 }

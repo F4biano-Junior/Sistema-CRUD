@@ -3,10 +3,13 @@ package br.com.crud.acao;
 import br.com.crud.cliente.Pessoa;
 import br.com.crud.repository.ListaDePessoas;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class AtualizarDados {
     public void atualizarDados(ListaDePessoas atualizarPessoa){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         Scanner sc = new Scanner(System.in);
 
@@ -25,8 +28,8 @@ public class AtualizarDados {
         System.out.println("Qual dado vai atualizar");
         System.out.println("""
                     1 - Nome
-                    2 - Idade
-                    3 - Cidade
+                    2 - Cidade
+                    3 - Data De Nascimento
                     """);
         int opcao = sc.nextInt();
         sc.nextLine();
@@ -39,16 +42,14 @@ public class AtualizarDados {
                 atualizarPorId.atualizarNome(novoNome);
                 break;
             case 2:
-                System.out.println("Qual será a nova idade?");
-                int novaIdade = sc.nextInt();
-                sc.nextLine();
-                atualizarPorId.atualizarIdade(novaIdade);
-                break;
-            case 3:
                 System.out.println("Qual será a nova cidade?");
                 String novaCidade = sc.nextLine();
                 atualizarPorId.atualizarCidade(novaCidade);
                 break;
+            case 3:
+                System.out.println("Qual será a nova data de nascimento?");
+                LocalDate novaData = LocalDate.parse(sc.next(), formato);
+                atualizarPorId.atualizarDataDeNascimento(novaData);
         }
     }
 
