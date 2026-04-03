@@ -47,6 +47,7 @@ public class CriarPessoa {
 
                 criar = true;
                 System.out.println("Pessoa cadastrada com sucesso!");
+
             } catch (ValidarDataDeNascimento e) {
                 System.out.println(e.getMessage());
             }

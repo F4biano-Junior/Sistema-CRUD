@@ -3,8 +3,9 @@ package br.com.crud.menu;
 import br.com.crud.acao.AtualizarDados;
 import br.com.crud.acao.CriarPessoa;
 import br.com.crud.acao.DeletarPessoa;
-import br.com.crud.cliente.Pessoa;
+
 import br.com.crud.repository.ListaDePessoas;
+import br.com.crud.view.ExibirPessoaView;
 
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class MenuService {
         ListaDePessoas listaDePessoas = new ListaDePessoas();
         AtualizarDados atualizarDados = new AtualizarDados();
         DeletarPessoa deletarPessoa = new DeletarPessoa();
-
+        ExibirPessoaView exibirView = new ExibirPessoaView();
         Scanner teclado = new Scanner(System.in);
         while (true) {
             System.out.println(
@@ -35,12 +36,7 @@ public class MenuService {
                     criarPessoa.cadastrar(listaDePessoas);
                     break;
                 case "2": // R *Read
-                    // criar uma copia da lista do repositorio
-                    List<Pessoa> pessoas = listaDePessoas.listar();
-                    // lê essa copia
-                    for (Pessoa pessoa : pessoas){
-                        System.out.println(pessoa);
-                    }
+                    exibirView.exibir(listaDePessoas);
                     break;
                 case "3": // U *Update
                     atualizarDados.atualizarDados(listaDePessoas);
