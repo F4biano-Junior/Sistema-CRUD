@@ -20,14 +20,6 @@ public class ListaDePessoas {
         pessoaArrayList.add(pessoa);
     }
 
-    @Override
-    public String toString() {
-        for (Pessoa pessoa : pessoaArrayList) {
-            System.out.println(pessoa);
-        }
-        return "";
-    }
-
     public ListaDePessoas() {
             adicionar(new Pessoa("Lucy", LocalDate.of(2005, 10, 3), "Lua"));
             adicionar(new Pessoa("David ",LocalDate.of(2005,8, 11), "São Paulo"));
