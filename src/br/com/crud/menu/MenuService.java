@@ -7,7 +7,6 @@ import br.com.crud.acao.DeletarPessoa;
 import br.com.crud.repository.ListaDePessoas;
 import br.com.crud.view.ExibirPessoaView;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class MenuService {
@@ -19,33 +18,36 @@ public class MenuService {
         ExibirPessoaView exibirView = new ExibirPessoaView();
         Scanner teclado = new Scanner(System.in);
         while (true) {
-            System.out.println(
-                    """
-                    1 - C Criar Pessoa
-                    2 - R Listar Pessoas
-                    3 - U Atualizar dados
-                    4 - D Deletar Pessoa
-                    """
-            );
+            try {
+                System.out.println(
+                        """
+                                1 - C Criar Pessoa
+                                2 - R Listar Pessoas
+                                3 - U Atualizar dados
+                                4 - D Deletar Pessoa
+                                """
+                );
 
-            System.out.println("Qual ação tomar");
-            String opcao = teclado.next();
+                System.out.println("Qual ação tomar");
+                String opcao = teclado.next();
 
-            switch (opcao) {
-                case "1": // C *Create
-                    criarPessoa.cadastrar(listaDePessoas);
-                    break;
-                case "2": // R *Read
-                    exibirView.exibir(listaDePessoas);
-                    break;
-                case "3": // U *Update
-                    atualizarDados.atualizarDados(listaDePessoas);
-                    break;
-                case "4":
-                    deletarPessoa.deletar(listaDePessoas);
+                switch (opcao) {
+                    case "1": // C *Create
+                        criarPessoa.cadastrar(listaDePessoas);
+                        break;
+                    case "2": // R *Read
+                        exibirView.exibir(listaDePessoas);
+                        break;
+                    case "3": // U *Update
+                        atualizarDados.atualizarDados(listaDePessoas);
+                        break;
+                    case "4": // Delete
+                        deletarPessoa.deletar(listaDePessoas);
 
+                }
+            } catch (IllegalArgumentException e) {
+                throw new IllegalArgumentException("Por favor, Digite uma opção valida!");
             }
-
         }
     }
 }

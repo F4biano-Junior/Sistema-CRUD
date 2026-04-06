@@ -11,7 +11,7 @@ public class AtualizarDados {
     public void atualizarDados(ListaDePessoas atualizarPessoa){
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Atualizando dados de pessoas");
@@ -19,8 +19,8 @@ public class AtualizarDados {
         System.out.println(atualizarPessoa);
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Digite o ID de quem vai atualizar os dados:");
-        int inputId = sc.nextInt();
-        sc.nextLine();
+        int inputId = input.nextInt();
+        input.nextLine();
 
         Pessoa atualizarPorId = atualizarPessoa.buscarPorId(inputId);
 
@@ -31,24 +31,24 @@ public class AtualizarDados {
                     2 - Cidade
                     3 - Data De Nascimento
                     """);
-        int opcao = sc.nextInt();
-        sc.nextLine();
+        int opcao = input.nextInt();
+        input.nextLine();
 
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         switch (opcao) {
             case 1:
                 System.out.println("Qual será o novo nome?");
-                String novoNome = sc.nextLine();
+                String novoNome = input.nextLine();
                 atualizarPorId.atualizarNome(novoNome);
                 break;
             case 2:
                 System.out.println("Qual será a nova cidade?");
-                String novaCidade = sc.nextLine();
+                String novaCidade = input.nextLine();
                 atualizarPorId.atualizarCidade(novaCidade);
                 break;
             case 3:
                 System.out.println("Qual será a nova data de nascimento?");
-                LocalDate novaData = LocalDate.parse(sc.next(), formato);
+                LocalDate novaData = LocalDate.parse(input.next(), formato);
                 atualizarPorId.atualizarDataDeNascimento(novaData);
         }
     }

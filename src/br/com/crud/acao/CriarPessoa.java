@@ -1,18 +1,19 @@
 package br.com.crud.acao;
 
 import br.com.crud.cliente.Pessoa;
+import br.com.crud.exception.ValidarCidadeException;
 import br.com.crud.exception.ValidarDataDeNascimento;
+import br.com.crud.exception.ValidarNomeException;
 import br.com.crud.repository.ListaDePessoas;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CriarPessoa {
     /*
-     * aqui eu chamo a lista do repository em vez de criar uma nova
+     * aqui eu chamo a lista do repository em vez de criar uma
      * é uma injeção de dependencia
      * mantem os dados no repository
      */
@@ -33,7 +34,7 @@ public class CriarPessoa {
                 LocalDate data = LocalDate.parse(input.next(), formato);
 
                 input.nextLine();
-
+                
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
 
                 System.out.println("Cidade do Pessoa: ");
@@ -48,8 +49,10 @@ public class CriarPessoa {
                 criar = true;
                 System.out.println("Pessoa cadastrada com sucesso!");
 
-            } catch (ValidarDataDeNascimento e) {
+            } catch (ValidarDataDeNascimento | ValidarCidadeException | ValidarNomeException e) {
                 System.out.println(e.getMessage());
+            } catch (DateTimeParseException e){
+                throw new RuntimeException("Data invalida! Digite no formato corretamente");
             }
         }
     }
