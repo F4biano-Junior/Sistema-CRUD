@@ -20,8 +20,9 @@ public class Pessoa {
         }
         if (cidade == null || cidade.trim().isEmpty()) {
             throw new ValidarCidadeException("O campo cidade deve ser declarado!");
-        }if (dataDeNascimento.isAfter(LocalDate.now())) {
-            throw new ValidarDataDeNascimento("Coloque uma data de nascimento no formato válido dd/MM/yyyy");
+        }if (dataDeNascimento.isBefore(LocalDate.of(1976, 12, 31)) ||
+                dataDeNascimento.isAfter(LocalDate.of(2007,12,31))) {
+            throw new ValidarDataDeNascimento("Coloque uma data de nascimento em um periodo válido");
         }
         this.nome = nome;
         this.cidade = cidade;
