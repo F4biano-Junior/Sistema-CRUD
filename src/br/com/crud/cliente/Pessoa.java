@@ -48,9 +48,9 @@ public class Pessoa {
     public void atualizarNome(String novoNome) {
         if (nome == null || nome.trim().isEmpty()) {
             throw new ValidarNomeException("O campo nome deve ser declarado!");
-        }
+        } else {
         this.nome = novoNome;
-    }
+    }}
 
     public void atualizarCidade(String novaCidade) {
         if (cidade == null || cidade.trim().isEmpty()) {
@@ -71,4 +71,13 @@ public class Pessoa {
         return Period.between(dataDeNascimento, dataAtual).getYears();
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa { " +
+                " id: " + id +
+                " nome: " + nome + '\'' +
+                " cidade: " + cidade + '\'' +
+                " Idade: " + calcularIdade() +
+                " }";
+    }
 }
