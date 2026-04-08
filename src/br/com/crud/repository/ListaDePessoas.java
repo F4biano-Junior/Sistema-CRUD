@@ -1,6 +1,7 @@
 package br.com.crud.repository;
 
 import br.com.crud.cliente.Pessoa;
+import br.com.crud.view.ExibirPessoaView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -38,11 +39,17 @@ public class ListaDePessoas {
 
 
     public Pessoa deletarPorId(int id){
-        for(Pessoa p : pessoaArrayList){
-            if (p.getId() == id){
-                pessoaArrayList.remove(p);
-            }
-        }
-        return null;
+        pessoaArrayList.removeIf(p -> p.getId() == id);
+        return  null;
     }
+
+//    public Pessoa deletarPorId(int id){
+//        for(Pessoa p : pessoaArrayList){
+//            if (p.getId() == id){
+//                pessoaArrayList.remove(p);
+//            }
+//        }
+//        return null;
+//    }
+
 }
