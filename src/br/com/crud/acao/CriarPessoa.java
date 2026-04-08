@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
+
 public class CriarPessoa {
     /*
      * aqui eu chamo a lista do repository em vez de criar uma
@@ -18,42 +19,49 @@ public class CriarPessoa {
      * mantem os dados no repository
      */
     public void cadastrar(ListaDePessoas p) {
-        boolean criar = false;
         Scanner input = new Scanner(System.in);
+
+        String nome = null;
+        String cidade = null;
+        LocalDate data = null;
+
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        while (!criar) {
-            try {
+        try {
+            while (nome == null) {
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
-
                 System.out.println("Nome do Pessoa: ");
-                String nome = input.nextLine();
+                nome = input.nextLine();
+            }
 
+            while (data == null) {
                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
-
                 System.out.println("Data de Nascimento: ");
-                LocalDate data = LocalDate.parse(input.next(), formato);
+
+
+                data = LocalDate.parse(input.next(), formato);
 
                 input.nextLine();
-                
-                System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
 
-                System.out.println("Cidade do Pessoa: ");
-                String cidade = input.nextLine();
+                while (cidade == null) {
 
-                System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
-
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
+                    System.out.println("Cidade do Pessoa: ");
+                    cidade = input.nextLine();
+                }
                 Pessoa pessoaCriada = new Pessoa(nome, data, cidade);
-
                 p.adicionar(pessoaCriada);
-
-                criar = true;
                 System.out.println("Pessoa cadastrada com sucesso!");
 
-            } catch (ValidarDataDeNascimento | ValidarCidadeException | ValidarNomeException e) {
-                System.out.println(e.getMessage());
-            } catch (DateTimeParseException e){
-                throw new RuntimeException("Data invalida! Digite no formato corretamente");
             }
+            }catch (ValidarNomeException vNome){
+            System.out.println("O Campo nome deve ser preenchido! Erro: " + vNome.getMessage());
+        }catch (ValidarDataDeNascimento vData){
+            System.out.println("" + vData);
+        }catch (DateTimeParseException vData){
+            System.out.println("Por favor, digite a data corretamente! " + vData.getMessage());
+        }
+        catch (ValidarCidadeException vCidade){
+            System.out.println("" + vCidade.getMessage());
+        }
         }
     }
-}
