@@ -60,7 +60,7 @@ public class AtualizarDados {
                     atualizarPorId.atualizarDataDeNascimento(novaData);
 
             }
-        }catch (IllegalArgumentException argumentException){
+        }catch (IllegalArgumentException e){
             System.out.println("Por favor, digite uma opção válida!");
         }
     }}
